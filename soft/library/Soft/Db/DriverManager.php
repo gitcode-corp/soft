@@ -33,9 +33,9 @@ class DriverManager
     public function getConnection($driver)
     {
         if ($driver instanceof Driver\Driver) {
-            return $driver->connect();
+            return $this->createConnection($driver)->connect();
         } elseif (is_array($driver) && $driver) {
-            return $this->createDriver($driver);
+            return  $this->createConnection($this->createDriver($driver))->connect();
         } else {
             $message = "Expected Soft\Db\Driver\Driver or params array.";
             throw new Exception\DriverManagerInvalidArgumentException($message);
@@ -80,6 +80,11 @@ class DriverManager
         }
         
         return $default;
+    }
+    
+    private function createConnection(Driver\Driver $driver)
+    {
+        return new Connection($driver);
     }
     
 }
