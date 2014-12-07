@@ -1,8 +1,8 @@
 <?php
 
-namespace Soft\Http;
+namespace Soft\Http\Request;
 
-interface RequestInterface
+interface Request
 {
     /**
      * @return string

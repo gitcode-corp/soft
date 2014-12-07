@@ -2,6 +2,8 @@
 
 namespace Soft\Http;
 
+use Soft\Http\Request\Request as RequestInterface;
+
 class Request implements RequestInterface
 {
     const METHOD_GET     = 'GET';
