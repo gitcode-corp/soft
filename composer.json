@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-0": {
+            "Soft\\": "library/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.23"
+    }
+}
